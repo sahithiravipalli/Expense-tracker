@@ -13,6 +13,10 @@ A simple and user-friendly Expense Tracker web application built using HTML, CSS
 - Clean and responsive user interface
 
 ## Technologies Used
-- HTML5
-- CSS3
-- JavaScript
+-HTML5
+-CSS3
+-JavaScript (ES6)
+-Chart.js
+-Local Storage API
+-Git
+-GitHub
