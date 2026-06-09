@@ -120,10 +120,6 @@ function displayTransactions() {
     });
 }
 
-// --------------------
-// Edit Transaction
-// --------------------
-
 function editTransaction(id) {
 
     const t = transactions.find(
@@ -137,10 +133,6 @@ function editTransaction(id) {
     editId = id;
 }
 
-// --------------------
-// Delete Transaction
-// --------------------
-
 function deleteTransaction(id) {
 
     transactions =
@@ -153,9 +145,6 @@ function deleteTransaction(id) {
     updateBalance();
 }
 
-// --------------------
-// Balance Calculation
-// --------------------
 
 function updateBalance() {
 
@@ -184,8 +173,6 @@ function updateBalance() {
 
     savings.innerText =
     "₹" + total;
-
-    // Budget Progress
 
     if (budget.value > 0) {
 
@@ -235,9 +222,6 @@ function updateBalance() {
     updateChart();
 }
 
-// --------------------
-// Local Storage
-// --------------------
 
 function updateLocalStorage() {
 
@@ -248,9 +232,6 @@ function updateLocalStorage() {
 
 }
 
-// --------------------
-// Dark Mode
-// --------------------
 
 themeBtn.addEventListener(
     "click",
@@ -263,14 +244,8 @@ themeBtn.addEventListener(
     }
 );
 
-// --------------------
-// Search
-// --------------------
 
-document
-.getElementById("search")
-.addEventListener(
-"input",
+document.getElementById("search").addEventListener("input",
 function(){
 
     const value =
@@ -294,10 +269,6 @@ function(){
 
 });
 
-// --------------------
-// Budget Storage
-// --------------------
-
 budget.value =
 localStorage.getItem("budget")
 || "";
@@ -316,9 +287,7 @@ budget.addEventListener(
     }
 );
 
-// --------------------
-// Export CSV
-// --------------------
+
 
 exportBtn.addEventListener(
     "click",
@@ -354,10 +323,6 @@ function exportCSV() {
 
     link.click();
 }
-
-// --------------------
-// Pie Chart
-// --------------------
 
 function updateChart() {
 
