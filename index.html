@@ -1,53 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>💰 Expense Tracker</h1>
+    <!-- Navbar -->
+    <nav>
+        <h2>💰 Expense Tracker</h2>
+        <button id="themeBtn">🌙 Dark Mode</button>
+    </nav>
 
-    <div class="balance-card">
-        <h2>Balance</h2>
-        <h1>₹<span id="balance">0</span></h1>
-    </div>
+    <div class="container">
 
-    <div class="inc-exp">
-        <div class="card income">
-            <h4>Income</h4>
-            <p id="income">₹0</p>
+        <h1>Expense Tracker Dashboard</h1>
+
+        <!-- Balance -->
+        <div class="balance-card">
+            <h2>Balance</h2>
+            <h1>₹<span id="balance">0</span></h1>
         </div>
 
-        <div class="card expense">
-            <h4>Expense</h4>
-            <p id="expense">₹0</p>
+        <!-- Analytics -->
+        <h3>Expense Analytics</h3>
+        <canvas id="expenseChart"></canvas>
+
+        <!-- Summary Cards -->
+        <div class="inc-exp">
+
+            <div class="card">
+                <h4>Savings</h4>
+                <p id="savings">₹0</p>
+            </div>
+
+            <div class="card income">
+                <h4>Income</h4>
+                <p id="income">₹0</p>
+            </div>
+
+            <div class="card expense">
+                <h4>Expense</h4>
+                <p id="expense">₹0</p>
+            </div>
+
+            <div class="card">
+                <h4>Transactions</h4>
+                <p id="count">0</p>
+            </div>
+
         </div>
+
+        <!-- Budget Section -->
+        <div class="budget-section">
+
+            <h3>Monthly Budget</h3>
+
+            <input
+                type="number"
+                id="budget"
+                placeholder="Enter Monthly Budget"
+            >
+
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+
+            <p id="budgetText">
+                Budget Used: 0%
+            </p>
+
+        </div>
+
+        <!-- Add Transaction -->
+        <h3>Add Transaction</h3>
+
+        <div class="form">
+
+            <input
+                type="text"
+                id="text"
+                placeholder="Description"
+            >
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Amount (+income, -expense)"
+            >
+
+            <select id="category">
+                <option>🍔 Food</option>
+                <option>🚗 Travel</option>
+                <option>🛒 Shopping</option>
+                <option>💡 Bills</option>
+                <option>🎬 Entertainment</option>
+                <option>🏥 Health</option>
+                <option>📚 Education</option>
+            </select>
+
+            <button id="addBtn">
+                Add Transaction
+            </button>
+
+        </div>
+
+        <!-- History -->
+        <h3>History</h3>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Search transactions..."
+        >
+
+        <button id="exportBtn">
+            📥 Export CSV
+        </button>
+
+        <ul id="list"></ul>
+
+        <p id="empty">
+            📭 No transactions yet
+        </p>
+
     </div>
 
-    <h3>Add Transaction</h3>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 
-    <div class="form">
-        <input type="text" id="text" placeholder="Description">
-        <input type="number" id="amount" placeholder="Amount (+income, -expense)">
-        
-        <select id="category">
-            <option>Food</option>
-            <option>Travel</option>
-            <option>Shopping</option>
-            <option>Bills</option>
-        </select>
-
-        <button id="addBtn">Add</button>
-    </div>
-
-    <h3>History</h3>
-    <ul id="list"></ul>
-
-    <p id="empty">No transactions yet</p>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
